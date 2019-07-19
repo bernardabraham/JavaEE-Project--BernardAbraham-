@@ -1,18 +1,30 @@
 package persistence.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class ProjectAccount {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String userName;
-	private String Password;
+	private String password;
 	private String email;
 	
 	public ProjectAccount(String userName, String password, String email, int id) {
 		super();
 		this.userName = userName;
-		Password = password;
+		this.password = password;
 		this.email = email;
 		this.id = id;
+	}
+	
+	public ProjectAccount(){
+		
 	}
 	public String getUserName() {
 		return userName;
@@ -21,10 +33,10 @@ public class ProjectAccount {
 		this.userName = userName;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getEmail() {
 		return email;

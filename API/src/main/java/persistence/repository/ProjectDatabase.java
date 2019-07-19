@@ -1,5 +1,6 @@
 package persistence.repository;
 
+import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -9,6 +10,7 @@ import javax.transaction.Transactional.TxType;
 import persistence.domain.ProjectAccount;
 import util.JSONUtil;
 
+@Default
 public class ProjectDatabase implements ProjectRepository {
 	JSONUtil util = new JSONUtil();
 	
@@ -18,7 +20,7 @@ public class ProjectDatabase implements ProjectRepository {
 	
 	@Transactional(value = TxType.SUPPORTS)
 	public String getAllAccounts() {
-		TypedQuery<ProjectAccount> query = manager.createQuery("select a from Account a", ProjectAccount.class);
+		TypedQuery<ProjectAccount> query = manager.createQuery("select a from ProjectAccount a", ProjectAccount.class);
 		return this.util.getJSONForObject(query.getResultList());
 	}
 

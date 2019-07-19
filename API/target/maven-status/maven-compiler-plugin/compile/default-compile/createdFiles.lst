@@ -1,0 +1,8 @@
+service\ProjectAccountService.class
+service\ProjectAccountServiceImpl.class
+rest\JAXActivator.class
+util\JSONUtil.class
+persistence\domain\ProjectAccount.class
+persistence\repository\ProjectRepository.class
+rest\ProjectAccountController.class
+persistence\repository\ProjectDatabase.class
