@@ -1,6 +1,6 @@
 package persistence.repository;
 
-public interface ProjectRepository{
+public interface UserRepository{
 	
 	String getAllAccounts();
 	String createAccount(String account);

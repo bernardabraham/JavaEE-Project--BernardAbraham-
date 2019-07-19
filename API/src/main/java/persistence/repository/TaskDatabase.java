@@ -11,7 +11,7 @@ import persistence.domain.User;
 import util.JSONUtil;
 
 @Default
-public class ProjectDatabase implements ProjectRepository {
+public class TaskDatabase implements TaskRepository {
 	JSONUtil util = new JSONUtil();
 	
 	@PersistenceContext(unitName = "primary")
